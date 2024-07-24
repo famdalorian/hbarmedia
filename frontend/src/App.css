@@ -1,38 +1,144 @@
-.App {
+body {
+  font-family: "fairwater-deco-serif", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.{
+font-weight: 400;
+font-style: normal;
+}
+
+.header {
+  background: #1E3A5F; /* Slate color with a bit more blue */
+  padding: 10px 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.cta-button {
+  background: #dabd18; /* Teal color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.hero {
+  background: url('../src/assets/bg123.png') center;
+  color: black;
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+
+.hero h1,
+.hero p {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding around the text */
+  margin: 10px 0; /* Margin between elements */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.hero button {
+  background-color: #d4af37; /* Gold color for the button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #c19430; /* Slightly darker gold on hover */
+}
+.about-us, .services, .portfolio, .testimonials, .blog, .contact {
+  padding: 50px 0;
+  background-color: #122b4c;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-card {
+  width: 30%;
+  background: #dabd18;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.footer {
+  background: #1E3A5F; /* Slate color with a bit more blue */
+  color: slategray;
+  padding: 20px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer-links {
+  list-style: none;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  margin: 0 10px;
+}
+
+.footer-links a {
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.social-media {
+  text-align: center;
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.newsletter-signup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-signup input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.newsletter-signup button {
+  padding: 10px;
+  background: #008080; /* Teal color */
+  color: white;
+  border: none;
 }
