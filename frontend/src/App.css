@@ -63,7 +63,6 @@ body {
   color: #fff; /* Text color */
   padding: 10px 20px; /* Padding around the text */
   margin: 10px 0; /* Margin between elements */
-  border-radius: 5px; /* Rounded corners */
 }
 
 .hero button {
@@ -96,7 +95,7 @@ body {
   background: #dabd18;
   padding: 20px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 2px solid #008080; /* Teal border */
   margin-bottom: 20px;
 }
 
@@ -113,18 +112,20 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensure wrapping on small screens */
 }
 
 .footer-links li {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .footer-links a {
   color: white; /* Ensure footer links are white */
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better visibility */
   padding: 10px 20px; /* Padding around the text */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 10px; /* Rounded corners */
   text-decoration: none;
+  border: 2px solid #008080; /* Teal border */
 }
 
 .footer-links a:hover {
@@ -164,7 +165,6 @@ body {
 .about-us, .services, .portfolio, .testimonials, .blog, .contact h6 {
   padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
 }
 
 /* Responsive CSS */
@@ -198,10 +198,15 @@ body {
 
   .footer-links {
     flex-direction: column;
+    align-items: center;
   }
 
   .footer-links li {
-    margin: 5px 0;
+    margin: 10px 0; /* Increased margin to prevent overlap */
+  }
+
+  .footer-links a {
+    margin: 5px 0; /* Additional margin for space */
   }
 
   .newsletter-signup {
@@ -229,6 +234,14 @@ body {
 
   .service-card {
     width: 90%;
+  }
+
+  .footer-links li {
+    margin: 10px 0; /* Increased margin to prevent overlap */
+  }
+
+  .footer-links a {
+    margin: 5px 0; /* Additional margin for space */
   }
 
   .newsletter-signup input,
