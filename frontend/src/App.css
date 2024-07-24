@@ -4,9 +4,10 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-.{
-font-weight: 400;
-font-style: normal;
+
+* {
+  font-weight: 400;
+  font-style: normal;
 }
 
 .header {
@@ -55,7 +56,6 @@ font-style: normal;
   position: relative;
 }
 
-
 .hero h1,
 .hero p {
   display: inline-block;
@@ -78,14 +78,17 @@ font-style: normal;
 .hero button:hover {
   background-color: #c19430; /* Slightly darker gold on hover */
 }
+
 .about-us, .services, .portfolio, .testimonials, .blog, .contact {
   padding: 50px 0;
   background-color: #122b4c;
+  color: white;
 }
 
 .service-cards {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .service-card {
@@ -94,11 +97,12 @@ font-style: normal;
   padding: 20px;
   text-align: center;
   border: 1px solid #ddd;
+  margin-bottom: 20px;
 }
 
 .footer {
   background: #1E3A5F; /* Slate color with a bit more blue */
-  color: slategray;
+  color: white; /* Ensure footer text is white */
   padding: 20px 0;
   text-align: center;
 }
@@ -116,8 +120,15 @@ font-style: normal;
 }
 
 .footer-links a {
-  color: white;
+  color: white; /* Ensure footer links are white */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better visibility */
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
   text-decoration: none;
+}
+
+.footer-links a:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
 }
 
 .social-media {
@@ -141,4 +152,87 @@ font-style: normal;
   background: #008080; /* Teal color */
   color: white;
   border: none;
+}
+
+/* Add padding to all text elements */
+.about-us, .services, .portfolio, .testimonials, .blog, .contact p,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h1,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h2,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h3,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h4,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h5,
+.about-us, .services, .portfolio, .testimonials, .blog, .contact h6 {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-links li {
+    margin: 5px 0;
+  }
+
+  .newsletter-signup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-signup input,
+  .newsletter-signup button {
+    width: 80%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1,
+  .hero p {
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 30px 0;
+  }
+
+  .service-card {
+    width: 90%;
+  }
+
+  .newsletter-signup input,
+  .newsletter-signup button {
+    width: 90%;
+  }
 }
