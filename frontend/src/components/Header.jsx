@@ -1,38 +1,25 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
-function Header() {
-  return (
-    <div>
-      <header className="header">
-        <div className="container">
-          <img src="logo.png" alt="Hbar Marketing Logo" className="logo" />
-          <nav>
-            <ul className="nav-links">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about">About Us</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li>
-                <a href="#blog">Blog</a>
-              </li>
-              <li>
-                <a href="#contact">Contact Us</a>
-              </li>
-            </ul>
-            <button className="cta-button">Get Started</button>
-          </nav>
-        </div>
-      </header>
+const Header = () => (
+  <header className="header">
+    <div className="container">
+      <div className="logo"></div>
+      <nav>      ℏ-bar Media
+
+        <ul className="nav-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/portfolio">Portfolio</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+        </ul>
+        <button className="cta-button">Get Started</button>
+      </nav>
     </div>
-  );
-}
+  </header>
+);
 
 export default Header;
