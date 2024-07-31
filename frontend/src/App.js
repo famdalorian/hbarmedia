@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -11,20 +11,32 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const App = () => (
-  <Router>
-    <Header />
-    <Routes>
-      <Route path="/" element={<HeroSection />} />
-      <Route path="/about" element={<AboutUs />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/portfolio" element={<Portfolio />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-    <Testimonials />
-    <Footer />
-  </Router>
-);
+function App() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <Router>
+      <div className="App">
+        <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<HeroSection />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Testimonials />
+        <Footer />
+      </div>
+    </Router>
+  );
+}
 
 export default App;
