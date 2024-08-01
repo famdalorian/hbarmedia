@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/loginModal.css'; // CSS file for styling
+import './styles/loginModal.css';
 
 const LoginModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
@@ -7,9 +7,8 @@ const LoginModal = ({ isOpen, onClose }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Handle login logic here (e.g., API call)
     console.log('Logging in with:', email, password);
-    onClose(); // Close modal after login
+    onClose();
   };
 
   if (!isOpen) {
@@ -19,7 +18,9 @@ const LoginModal = ({ isOpen, onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-button" onClick={onClose}>&times;</button>
+        <button className="close-button" onClick={onClose} aria-label="Close modal">
+          &times;
+        </button>
         <h2>Log In</h2>
         <form onSubmit={handleLogin}>
           <input

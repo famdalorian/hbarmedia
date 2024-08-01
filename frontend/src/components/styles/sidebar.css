@@ -46,7 +46,7 @@
   }
   
   .sidebar-nav li a {
-    color: white;
+    color: #122b4c;
     text-decoration: none;
     display: block;
   }
@@ -54,7 +54,7 @@
   /* Responsive adjustments */
   @media (max-width: 480px) {
     .sidebar {
-      width: 50%; /* Expand width for mobile */
+      width: 25%; /* Expand width for mobile */
     }
   
     .sidebar-nav li {

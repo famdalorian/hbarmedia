@@ -3,7 +3,7 @@ import HamburgerIcon from './HamburgerIcon';
 import LoginModal from './LoginModal';
 import './styles/header.css';
 
-const Header = ({ toggleSidebar, isSidebarOpen, isLoggedIn }) => {
+const Header = ({ toggleSidebar, isSidebarOpen, isLoggedIn, toggleLoginStatus }) => {
   const [isLoginOpen, setLoginOpen] = useState(false);
 
   const toggleLoginModal = () => {
@@ -13,15 +13,19 @@ const Header = ({ toggleSidebar, isSidebarOpen, isLoggedIn }) => {
   return (
     <header className="header">
       <div className="container">
-        <div className="logo" style={{ backgroundImage: 'url(/logo.png)' }}></div>
-        
-        {/* Display Log In button if not signed in */}
-        {!isLoggedIn && (
-          <button className="cta-button" onClick={toggleLoginModal}>Log In</button>
-        )}
-        
-        <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen} />
-        
+        <div className="left-section">
+          <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen} />
+          <div className="logo">
+           
+          </div>
+        </div>
+        <div className="right-section"> <h1>Hbar Media</h1>
+          {!isLoggedIn && (
+            <button className="cta-button" onClick={toggleLoginModal}>
+              Log In
+            </button>
+          )}
+        </div>
       </div>
       <LoginModal isOpen={isLoginOpen} onClose={toggleLoginModal} />
     </header>

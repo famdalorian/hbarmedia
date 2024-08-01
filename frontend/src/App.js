@@ -20,10 +20,7 @@ function App() {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  // Toggle login status for demonstration purposes
-  const toggleLoginStatus = () => {
-    setIsLoggedIn(!isLoggedIn);
-  };
+  
 
   return (
     <Router>
@@ -47,9 +44,7 @@ function App() {
         <Testimonials />
         <Footer />
         {/* Toggle login status button for testing purposes */}
-        <button onClick={toggleLoginStatus}>
-          {isLoggedIn ? 'Log Out' : 'Log In'}
-        </button>
+       
       </div>
     </Router>
   );

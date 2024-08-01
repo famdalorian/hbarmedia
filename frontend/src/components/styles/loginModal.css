@@ -1,92 +1,97 @@
 /* Modal overlay to cover the entire screen */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it is above other elements */
-    padding: 20px; /* Added padding for mobile responsiveness */
-  }
-  
-  /* Modal content box */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it is above other elements */
+  padding: 20px; /* Added padding for mobile responsiveness */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; /* Ensures content stays within bounds */
+  text-align: center;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333; /* Dark color for visibility */
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #d9534f; /* Change color on hover */
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #5f7a9c; /* Header color */
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding does not increase width */
+}
+
+.cta-button {
+  background: #dabd18;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #bfa617; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
   .modal-content {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden; /* Ensures content stays within bounds */
-    text-align: center;
+    padding: 20px; /* Reduced padding on smaller screens */
+    width: 80%; /* Ensure it fits well on smaller screens */
   }
-  
-  /* Close button */
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-    color: #5f7a9c; /* Header color */
-  }
-  
-  /* Form styling */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
+
   input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box; /* Ensures padding does not increase width */
+    font-size: 14px; /* Smaller text on smaller screens */
   }
-  
+
   .cta-button {
-    background: #dabd18;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    padding: 8px 16px;
+    font-size: 14px;
   }
-  
-  .cta-button:hover {
-    background: #bfa617; /* Slightly darker on hover */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 480px) {
-    .modal-content {
-      padding: 20px; /* Reduced padding on smaller screens */
-    }
-  
-    input {
-      font-size: 14px; /* Smaller text on smaller screens */
-    }
-  
-    .cta-button {
-      padding: 8px 16px;
-      font-size: 14px;
-    }
-  }
-  
+}

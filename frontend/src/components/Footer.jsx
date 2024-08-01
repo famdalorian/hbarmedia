@@ -1,20 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { FaYoutube, FaTiktok, FaTwitter, FaEnvelope, FaPhone } from 'react-icons/fa'; // Import icons
 import '../App.css';
 
 const Footer = () => (
   <footer>
     <div className="container">
-      <ul className="footer-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About Us</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><Link to="/portfolio">Portfolio</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
-      </ul>
       <div className="social-media">
-   
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          <FaYoutube className="social-icon youtube" />
+        </a>
+        <a href="https://www.tiktok.com/@hbarmedia" target="_blank" rel="noopener noreferrer">
+          <FaTiktok className="social-icon tiktok" />
+        </a>
+        <a href="https://www.twitter.com/hbarmedia" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className="social-icon twitter" />
+        </a>
+        <a href="mailto:hbarcc@gmail.com">
+          <FaEnvelope className="social-icon email" />
+        </a>
+        <a href="tel:+7737660465">
+          <FaPhone className="social-icon phone" />
+        </a>
       </div>
       <form className="newsletter-signup">
         <input type="email" placeholder="Subscribe to our newsletter" required />
