@@ -1,34 +1,40 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import AboutUs from "./components/AboutUs";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import HamburgerIcon from "./components/HamburgerIcon";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import AboutUs from './components/AboutUs';
+import Services from './components/Services';
+import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
+import Blog from './components/Blog';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for login status
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  // Toggle login status for demonstration purposes
+  const toggleLoginStatus = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+
   return (
     <Router>
       <div className="App">
-        <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />{" "}
-        <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+        <Header
+          toggleSidebar={toggleSidebar}
+          isSidebarOpen={isSidebarOpen}
+          isLoggedIn={isLoggedIn} // Pass the login status
+        />
         <div className="content-container">
-          <div className="hamburger-container">
-            <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen} />
-          </div>
           <Routes>
             <Route path="/" element={<HeroSection />} />
             <Route path="/about" element={<AboutUs />} />
@@ -40,6 +46,10 @@ function App() {
         </div>
         <Testimonials />
         <Footer />
+        {/* Toggle login status button for testing purposes */}
+        <button onClick={toggleLoginStatus}>
+          {isLoggedIn ? 'Log Out' : 'Log In'}
+        </button>
       </div>
     </Router>
   );

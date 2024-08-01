@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import HamburgerIcon from './HamburgerIcon'; // Import HamburgerIcon
-import LoginModal from './LoginModal'; // Import LoginModal
+import HamburgerIcon from './HamburgerIcon';
+import LoginModal from './LoginModal';
 import './styles/header.css';
 
-const Header = ({ toggleSidebar, isSidebarOpen }) => {
-  const [isLoginOpen, setLoginOpen] = useState(false); // State to control modal visibility
+const Header = ({ toggleSidebar, isSidebarOpen, isLoggedIn }) => {
+  const [isLoginOpen, setLoginOpen] = useState(false);
 
   const toggleLoginModal = () => {
     setLoginOpen(!isLoginOpen);
@@ -15,20 +14,15 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
     <header className="header">
       <div className="container">
         <div className="logo" style={{ backgroundImage: 'url(/logo.png)' }}></div>
-        <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen} />
-        <nav className="nav-links">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-          </ul>
+        
+        {/* Display Log In button if not signed in */}
+        {!isLoggedIn && (
           <button className="cta-button" onClick={toggleLoginModal}>Log In</button>
-        </nav>
+        )}
+        
+        <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen} />
+        
       </div>
-      {/* Add the LoginModal component */}
       <LoginModal isOpen={isLoginOpen} onClose={toggleLoginModal} />
     </header>
   );

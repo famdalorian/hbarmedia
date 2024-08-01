@@ -1,11 +1,13 @@
 /* Header styling */
 .header {
     background: #5f7a9c;
-    padding: 10px 0;
+    padding: 10px 20px;
     color: #122b4c;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 100; /* Ensure it's above other elements */
   }
   
   .logo {
@@ -15,43 +17,23 @@
     background-repeat: no-repeat;
   }
   
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-links ul {
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin: 0 15px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-  
   .cta-button {
     background: #dabd18;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 16px;
+    margin-left: auto; /* Align the button to the right */
   }
   
-  .hamburger-container {
-    display: none;
-    cursor: pointer;
+  .cta-button:hover {
+    background: #bfa617;
   }
   
   .hamburger {
-    display: none;
+    display: none; /* Hidden by default on larger screens */
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
@@ -62,7 +44,7 @@
     width: 25px;
     height: 4px;
     background-color: white;
-    transition: all 0.3s ease;
+    margin: 3px 0;
   }
   
   .hamburger.open .bar:nth-child(1) {
@@ -77,33 +59,28 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
   
-  /* Responsive styling */
   @media (max-width: 768px) {
     .hamburger {
-      display: flex;
+      display: flex; /* Show hamburger icon on smaller screens */
     }
   
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #5f7a9c;
-      flex-direction: column;
-      align-items: center;
-      display: none; /* Hide by default */
+    .cta-button {
+      padding: 10px 20px;
+      font-size: 14px;
+      display: block; /* Ensure it's visible and takes up space */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      width: 50px; /* Adjust logo size on mobile */
+      height: 75px;
     }
   
-    .nav-open {
-      display: flex; /* Show when open */
-    }
-  
-    .nav-links ul {
-      flex-direction: column;
-    }
-  
-    .nav-links li {
-      margin: 15px 0;
+    .cta-button {
+      padding: 8px 16px;
+      font-size: 14px;
+      display: block; /* Ensure it's visible and takes up space */
     }
   }
   

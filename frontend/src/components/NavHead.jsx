@@ -4,7 +4,7 @@ function NavHead() {
   return (
     <div>
       <nav>
-        <ul className="nav-links">
+        {/* <ul className="nav-links">
           <li>
             <a href="#home">Home</a>
           </li>
@@ -23,7 +23,7 @@ function NavHead() {
           <li>
             <a href="#contact">Contact Us</a>
           </li>
-        </ul>
+        </ul> */}
         <button className="cta-button">Get Started</button>
       </nav>
     </div>
