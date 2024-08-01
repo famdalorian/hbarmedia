@@ -14,13 +14,13 @@ const Footer = () => (
         <li><Link to="/contact">Contact Us</Link></li>
       </ul>
       <div className="social-media">
-        {/* Add social media icons/links here */}
+   
       </div>
       <form className="newsletter-signup">
         <input type="email" placeholder="Subscribe to our newsletter" required />
         <button type="submit">Sign Up</button>
       </form>
-      <p>© 2024 Hbar Marketing. All Rights Reserved.</p>
+      <p>© 2024 Hbar Media. All Rights Reserved.</p>
     </div>
   </footer>
 );
