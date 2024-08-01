@@ -7,9 +7,9 @@
     height: 100%;
     background: linear-gradient(to bottom right, #5f7a9c, #122b4c); /* Linear gradient */
     color: rgb(49, 62, 82);
-    transition: left 0.666s ease;
-    z-index: 10;
-    overflow-y: auto; /* Ensures scrollability on smaller screens */
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays above other content when opened */
+    overflow-y: auto; /* Allows scrolling if content overflows */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
   }
   
@@ -54,7 +54,7 @@
   /* Responsive adjustments */
   @media (max-width: 480px) {
     .sidebar {
-      width: 80%; /* Expand width for mobile */
+      width: 50%; /* Expand width for mobile */
     }
   
     .sidebar-nav li {
